@@ -1,0 +1,920 @@
+{
+  "config": {
+    "seed": 0,
+    "n_outer_splits": 5,
+    "n_inner_splits": 5,
+    "n_repeats": 5,
+    "quick": false,
+    "grouping": "none",
+    "primary_scheme": "random",
+    "features": [
+      "Log GDP per capita",
+      "Social support",
+      "Healthy life expectancy at birth",
+      "Freedom to make life choices",
+      "Perceptions of corruption",
+      "Positive affect",
+      "Negative affect"
+    ],
+    "target": "Generosity",
+    "group": "country",
+    "std": "sample standard deviation (ddof=1) across all outer folds of all repeats",
+    "sklearn_version": "1.9.1"
+  },
+  "data_summary": {
+    "n_rows_raw": 1562,
+    "n_rows": 1482,
+    "n_countries": 160,
+    "year_min": 2005,
+    "year_max": 2017,
+    "missing_feature_values": {
+      "Log GDP per capita": 0,
+      "Social support": 8,
+      "Healthy life expectancy at birth": 0,
+      "Freedom to make life choices": 19,
+      "Perceptions of corruption": 74,
+      "Positive affect": 11,
+      "Negative affect": 6
+    }
+  },
+  "original_protocol": {
+    "linear_regression": {
+      "r2": 0.268436,
+      "mse": 0.018908
+    },
+    "random_forest": {
+      "r2": 0.61024,
+      "mse": 0.010074
+    },
+    "n_test_rows": 371
+  },
+  "cv": {
+    "random": {
+      "dummy_mean": {
+        "r2_mean": -0.003737,
+        "r2_std": 0.004978,
+        "r2_folds": [
+          -0.000946,
+          -0.002701,
+          -0.002433,
+          -0.001602,
+          -0.009169,
+          -0.001901,
+          -0.001146,
+          -0.002344,
+          -0.001087,
+          -1.6e-05,
+          -0.003962,
+          -7.5e-05,
+          -0.012517,
+          -0.017881,
+          -0.003935,
+          -0.015076,
+          -0.00149,
+          -0.001767,
+          -0.001211,
+          -0.00926,
+          -2e-05,
+          -0.001545,
+          -0.001306,
+          -1e-05,
+          -1.5e-05
+        ],
+        "mse_mean": 0.026978,
+        "mse_std": 0.002229,
+        "mse_folds": [
+          0.02936,
+          0.024363,
+          0.030029,
+          0.023743,
+          0.02739,
+          0.02531,
+          0.029343,
+          0.027556,
+          0.026614,
+          0.025958,
+          0.026345,
+          0.028518,
+          0.028777,
+          0.02259,
+          0.028837,
+          0.028757,
+          0.027385,
+          0.028,
+          0.028952,
+          0.02189,
+          0.027898,
+          0.026641,
+          0.026268,
+          0.024463,
+          0.029477
+        ],
+        "mae_mean": 0.128808,
+        "mae_std": 0.004585,
+        "mae_folds": [
+          0.132259,
+          0.122654,
+          0.134629,
+          0.123747,
+          0.130805,
+          0.12676,
+          0.132795,
+          0.132306,
+          0.126558,
+          0.125325,
+          0.125165,
+          0.134448,
+          0.130363,
+          0.121614,
+          0.132731,
+          0.131353,
+          0.128945,
+          0.134473,
+          0.131056,
+          0.118533,
+          0.127797,
+          0.125626,
+          0.130728,
+          0.124226,
+          0.1353
+        ],
+        "r2_repeat_means": [
+          -0.00337,
+          -0.001299,
+          -0.007674,
+          -0.005761,
+          -0.000579
+        ],
+        "best_params_per_fold": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ]
+      },
+      "ridge": {
+        "r2_mean": 0.223137,
+        "r2_std": 0.033072,
+        "r2_folds": [
+          0.271725,
+          0.234502,
+          0.234305,
+          0.184416,
+          0.180575,
+          0.208871,
+          0.238837,
+          0.232131,
+          0.233907,
+          0.214655,
+          0.280526,
+          0.262745,
+          0.189078,
+          0.17081,
+          0.20743,
+          0.278285,
+          0.244385,
+          0.153667,
+          0.211485,
+          0.207424,
+          0.264203,
+          0.22467,
+          0.215623,
+          0.223338,
+          0.210844
+        ],
+        "mse_mean": 0.02086,
+        "mse_std": 0.001713,
+        "mse_folds": [
+          0.021362,
+          0.0186,
+          0.022937,
+          0.019333,
+          0.02224,
+          0.019985,
+          0.022309,
+          0.02111,
+          0.020367,
+          0.020386,
+          0.01888,
+          0.021023,
+          0.023047,
+          0.018402,
+          0.022766,
+          0.020446,
+          0.020662,
+          0.023656,
+          0.022802,
+          0.01719,
+          0.020527,
+          0.020623,
+          0.020577,
+          0.018999,
+          0.023262
+        ],
+        "mae_mean": 0.1143,
+        "mae_std": 0.004356,
+        "mae_folds": [
+          0.113009,
+          0.105106,
+          0.118834,
+          0.114546,
+          0.12086,
+          0.110727,
+          0.115684,
+          0.116691,
+          0.111561,
+          0.116012,
+          0.109125,
+          0.11474,
+          0.117153,
+          0.109597,
+          0.120447,
+          0.110122,
+          0.115122,
+          0.124205,
+          0.114336,
+          0.108625,
+          0.111515,
+          0.115112,
+          0.115011,
+          0.111352,
+          0.118004
+        ],
+        "r2_repeat_means": [
+          0.221104,
+          0.22568,
+          0.222118,
+          0.219049,
+          0.227736
+        ],
+        "best_params_per_fold": [
+          {
+            "model__alpha": 10.0
+          },
+          {
+            "model__alpha": 10.0
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 10.0
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 10.0
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 10.0
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 10.0
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 3.162278
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 10.0
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 31.622777
+          },
+          {
+            "model__alpha": 31.622777
+          }
+        ]
+      },
+      "random_forest": {
+        "r2_mean": 0.586202,
+        "r2_std": 0.040647,
+        "r2_folds": [
+          0.600065,
+          0.628263,
+          0.58595,
+          0.606615,
+          0.551709,
+          0.55105,
+          0.590668,
+          0.651961,
+          0.562559,
+          0.596983,
+          0.664172,
+          0.609495,
+          0.566263,
+          0.572273,
+          0.521299,
+          0.622728,
+          0.603972,
+          0.509266,
+          0.608422,
+          0.547062,
+          0.647376,
+          0.570911,
+          0.56879,
+          0.51984,
+          0.597367
+        ],
+        "mse_mean": 0.011109,
+        "mse_std": 0.001329,
+        "mse_folds": [
+          0.011731,
+          0.009032,
+          0.012403,
+          0.009325,
+          0.012167,
+          0.011341,
+          0.011997,
+          0.009568,
+          0.01163,
+          0.010461,
+          0.008812,
+          0.011136,
+          0.012327,
+          0.009493,
+          0.01375,
+          0.010688,
+          0.010829,
+          0.013716,
+          0.011323,
+          0.009824,
+          0.009837,
+          0.011414,
+          0.011312,
+          0.011746,
+          0.011868
+        ],
+        "mae_mean": 0.078738,
+        "mae_std": 0.00447,
+        "mae_folds": [
+          0.07807,
+          0.071728,
+          0.080748,
+          0.072762,
+          0.085214,
+          0.077364,
+          0.083375,
+          0.074912,
+          0.080159,
+          0.077104,
+          0.069586,
+          0.078348,
+          0.084867,
+          0.076184,
+          0.084731,
+          0.077638,
+          0.079675,
+          0.088751,
+          0.078285,
+          0.075016,
+          0.07536,
+          0.078133,
+          0.079047,
+          0.079001,
+          0.082391
+        ],
+        "r2_repeat_means": [
+          0.59452,
+          0.590644,
+          0.5867,
+          0.57829,
+          0.580857
+        ],
+        "best_params_per_fold": [
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          },
+          {
+            "model__max_depth": null,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1
+          }
+        ]
+      },
+      "hist_gradient_boosting": {
+        "r2_mean": 0.601809,
+        "r2_std": 0.043855,
+        "r2_folds": [
+          0.606089,
+          0.648451,
+          0.584566,
+          0.637475,
+          0.560994,
+          0.592773,
+          0.570152,
+          0.677287,
+          0.579638,
+          0.610467,
+          0.697545,
+          0.627218,
+          0.607512,
+          0.579561,
+          0.541705,
+          0.64728,
+          0.646844,
+          0.549568,
+          0.594083,
+          0.523508,
+          0.650352,
+          0.579603,
+          0.564741,
+          0.556048,
+          0.61175
+        ],
+        "mse_mean": 0.010691,
+        "mse_std": 0.001391,
+        "mse_folds": [
+          0.011554,
+          0.008542,
+          0.012445,
+          0.008594,
+          0.011915,
+          0.010287,
+          0.012599,
+          0.008872,
+          0.011176,
+          0.010111,
+          0.007937,
+          0.01063,
+          0.011155,
+          0.009331,
+          0.013164,
+          0.009993,
+          0.009657,
+          0.01259,
+          0.011738,
+          0.010334,
+          0.009754,
+          0.011182,
+          0.011418,
+          0.01086,
+          0.011444
+        ],
+        "mae_mean": 0.077148,
+        "mae_std": 0.004781,
+        "mae_folds": [
+          0.078657,
+          0.070847,
+          0.078541,
+          0.068754,
+          0.083395,
+          0.074709,
+          0.08526,
+          0.07261,
+          0.080285,
+          0.074438,
+          0.06513,
+          0.077617,
+          0.081943,
+          0.073854,
+          0.081302,
+          0.075964,
+          0.076478,
+          0.083447,
+          0.079963,
+          0.074826,
+          0.07347,
+          0.078496,
+          0.080405,
+          0.078413,
+          0.079908
+        ],
+        "r2_repeat_means": [
+          0.607515,
+          0.606063,
+          0.610708,
+          0.592257,
+          0.592499
+        ],
+        "best_params_per_fold": [
+          {
+            "model__l2_regularization": 0.0,
+            "model__learning_rate": 0.1,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.1,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.1,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 40
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.1,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.1,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 40
+          },
+          {
+            "model__l2_regularization": 0.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.1,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 0.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 0.0,
+            "model__learning_rate": 0.1,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 40
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 0.0,
+            "model__learning_rate": 0.1,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 0.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 0.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.1,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 1.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          },
+          {
+            "model__l2_regularization": 0.0,
+            "model__learning_rate": 0.03,
+            "model__max_leaf_nodes": 31,
+            "model__min_samples_leaf": 10
+          }
+        ]
+      }
+    }
+  },
+  "best_model": "hist_gradient_boosting",
+  "permutation_importance": {
+    "ridge": {
+      "Log GDP per capita": {
+        "mean": 0.11165,
+        "std": 0.02793
+      },
+      "Social support": {
+        "mean": 0.001852,
+        "std": 0.003476
+      },
+      "Healthy life expectancy at birth": {
+        "mean": 0.006583,
+        "std": 0.005637
+      },
+      "Freedom to make life choices": {
+        "mean": 0.04778,
+        "std": 0.012684
+      },
+      "Perceptions of corruption": {
+        "mean": 0.095378,
+        "std": 0.021101
+      },
+      "Positive affect": {
+        "mean": 0.193591,
+        "std": 0.030513
+      },
+      "Negative affect": {
+        "mean": 0.006204,
+        "std": 0.005161
+      }
+    },
+    "random_forest": {
+      "Log GDP per capita": {
+        "mean": 0.338641,
+        "std": 0.034052
+      },
+      "Social support": {
+        "mean": 0.053852,
+        "std": 0.008755
+      },
+      "Healthy life expectancy at birth": {
+        "mean": 0.164722,
+        "std": 0.016464
+      },
+      "Freedom to make life choices": {
+        "mean": 0.181695,
+        "std": 0.028792
+      },
+      "Perceptions of corruption": {
+        "mean": 0.112654,
+        "std": 0.014227
+      },
+      "Positive affect": {
+        "mean": 0.219943,
+        "std": 0.030073
+      },
+      "Negative affect": {
+        "mean": 0.068071,
+        "std": 0.013279
+      }
+    },
+    "hist_gradient_boosting": {
+      "Log GDP per capita": {
+        "mean": 0.437614,
+        "std": 0.056191
+      },
+      "Social support": {
+        "mean": 0.06194,
+        "std": 0.011869
+      },
+      "Healthy life expectancy at birth": {
+        "mean": 0.225435,
+        "std": 0.032929
+      },
+      "Freedom to make life choices": {
+        "mean": 0.209898,
+        "std": 0.042058
+      },
+      "Perceptions of corruption": {
+        "mean": 0.163712,
+        "std": 0.021437
+      },
+      "Positive affect": {
+        "mean": 0.228868,
+        "std": 0.037569
+      },
+      "Negative affect": {
+        "mean": 0.092677,
+        "std": 0.018921
+      }
+    }
+  },
+  "pdp_features": [
+    "Log GDP per capita",
+    "Positive affect",
+    "Healthy life expectancy at birth"
+  ]
+}
