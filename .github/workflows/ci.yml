@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Lint
+        run: ruff check src tests
+
+      - name: Tests
+        run: pytest -q
+
+      - name: Quick reproduction (smoke run of the CLI, twice, must be identical)
+        run: |
+          python -m whr_generosity --quick --repeats 1 --results-dir /tmp/run1 --figures-dir /tmp/fig1
+          python -m whr_generosity --quick --repeats 1 --results-dir /tmp/run2 --figures-dir /tmp/fig2
+          cmp /tmp/run1/metrics.json /tmp/run2/metrics.json
+          ls -l /tmp/fig1
+
+      - name: Execute notebook
+        run: jupyter nbconvert --to notebook --execute --output /tmp/executed.ipynb notebooks/generosity_study.ipynb
